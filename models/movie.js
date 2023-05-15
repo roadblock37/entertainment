@@ -26,39 +26,37 @@ const regularSchema = new mongoose.Schema({
   },
 });
 
-
-
 const MovieSchema = new mongoose.Schema({
   title: {
     type: String,
     required: [true, "Please provide a title"],
   },
-  thumbnail: [{
-    trending: {
-      small: {
-        type: String,
-        required: [true, "Please provide small trending thumbnail"],
+  thumbnail: [
+    {
+      trending: {
+        small: {
+          type: String,
+        },
+        large: {
+          type: String,
+        },
       },
-      large: {
-        type: String,
-        required: [true, "Please provide large trending thumbnail"],
+      regular: {
+        small: {
+          type: String,
+          required: [true, "Please provide small regular thumbnail"],
+        },
+        medium: {
+          type: String,
+          required: [true, "Please provide medium regular thumbnail"],
+        },
+        large: {
+          type: String,
+          required: [true, "Please provide large regular thumbnail"],
+        },
       },
     },
-    regular: {
-      small: {
-        type: String,
-        required: [true, "Please provide small regular thumbnail"],
-      },
-      medium: {
-        type: String,
-        required: [true, "Please provide medium regular thumbnail"],
-      },
-      large: {
-        type: String,
-        required: [true, "Please provide large regular thumbnail"],
-      },
-    }
-  }],
+  ],
   year: {
     type: Number,
     required: [true, "Please provide a realease year"],
